@@ -44,19 +44,6 @@ public class ApplicationCoordinator: BaseCoordinator {
         tabBar.viewControllers = [homeView, UIViewController(), UIViewController()]
         
         self.router.push(tabBar)
-//        let coordinator: OnboardingUserCoordinator = self.coordinatorFactory.makeScreen(container: self.container, router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
-//        
-//        coordinator.finishFlow = { [unowned self, unowned coordinator] state in
-//            self.removeDependency(coordinator)
-//            switch state {
-//            case .dashboard:
-//                self.runDashboardScreen()
-//            case .pairing:
-//                self.runOnBoardingScreen()
-//            }
-//        }
-//        self.addDependency(coordinator)
-//        coordinator.start()
     }
     
     

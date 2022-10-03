@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		6920528228E77E6200BD24FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920528128E77E6200BD24FA /* AppDelegate.swift */; };
 		6920528428E77E6200BD24FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920528328E77E6200BD24FA /* SceneDelegate.swift */; };
-		6920528628E77E6200BD24FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920528528E77E6200BD24FA /* ViewController.swift */; };
 		6920528B28E77E6600BD24FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6920528A28E77E6600BD24FA /* Assets.xcassets */; };
 		6920528E28E77E6600BD24FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6920528C28E77E6600BD24FA /* LaunchScreen.storyboard */; };
-		6920529A28E7812300BD24FA /* DealTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920529928E7812300BD24FA /* DealTabBarViewController.swift */; };
 		692052A028E7869A00BD24FA /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920529C28E7869900BD24FA /* ApplicationCoordinator.swift */; };
 		692052A128E7869A00BD24FA /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920529D28E7869900BD24FA /* CoordinatorFactoryProtocol.swift */; };
 		692052A228E7869A00BD24FA /* RooterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920529E28E7869900BD24FA /* RooterProtocol.swift */; };
@@ -28,17 +26,17 @@
 		692052BB28E787F900BD24FA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692052B928E787F900BD24FA /* HomeViewController.xib */; };
 		692052BD28E78A4000BD24FA /* SelectAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052BC28E78A4000BD24FA /* SelectAddressView.swift */; };
 		692052BF28E7B00C00BD24FA /* NearbyCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */; };
+		692052C128EB689800BD24FA /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052C028EB689800BD24FA /* HomeViewInteractor.swift */; };
+		692052C328EB68D700BD24FA /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052C228EB68D700BD24FA /* HomeViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6920527E28E77E6200BD24FA /* Deal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6920528128E77E6200BD24FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6920528328E77E6200BD24FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6920528528E77E6200BD24FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6920528A28E77E6600BD24FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6920528D28E77E6600BD24FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6920528F28E77E6600BD24FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6920529928E7812300BD24FA /* DealTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealTabBarViewController.swift; sourceTree = "<group>"; };
 		6920529C28E7869900BD24FA /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		6920529D28E7869900BD24FA /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
 		6920529E28E7869900BD24FA /* RooterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RooterProtocol.swift; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		692052B928E787F900BD24FA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		692052BC28E78A4000BD24FA /* SelectAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressView.swift; sourceTree = "<group>"; };
 		692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCitiesView.swift; sourceTree = "<group>"; };
+		692052C028EB689800BD24FA /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInteractor.swift; sourceTree = "<group>"; };
+		692052C228EB68D700BD24FA /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +90,9 @@
 				6920529B28E7868300BD24FA /* Coordinator */,
 				6920528128E77E6200BD24FA /* AppDelegate.swift */,
 				6920528328E77E6200BD24FA /* SceneDelegate.swift */,
-				6920528528E77E6200BD24FA /* ViewController.swift */,
 				6920528A28E77E6600BD24FA /* Assets.xcassets */,
 				6920528C28E77E6600BD24FA /* LaunchScreen.storyboard */,
 				6920528F28E77E6600BD24FA /* Info.plist */,
-				6920529928E7812300BD24FA /* DealTabBarViewController.swift */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -153,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				692052B728E7879A00BD24FA /* Home */,
-				692052BC28E78A4000BD24FA /* SelectAddressView.swift */,
-				692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -162,10 +158,38 @@
 		692052B728E7879A00BD24FA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				692052B828E787F900BD24FA /* HomeViewController.swift */,
-				692052B928E787F900BD24FA /* HomeViewController.xib */,
+				692052C528EB69A400BD24FA /* Scene */,
+				692052C428EB699700BD24FA /* Models */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		692052C428EB699700BD24FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		692052C528EB69A400BD24FA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				692052C628EB6A0300BD24FA /* UIComponents */,
+				692052B828E787F900BD24FA /* HomeViewController.swift */,
+				692052B928E787F900BD24FA /* HomeViewController.xib */,
+				692052C028EB689800BD24FA /* HomeViewInteractor.swift */,
+				692052C228EB68D700BD24FA /* HomeViewPresenter.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		692052C628EB6A0300BD24FA /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				692052BC28E78A4000BD24FA /* SelectAddressView.swift */,
+				692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +265,6 @@
 			files = (
 				692052BD28E78A4000BD24FA /* SelectAddressView.swift in Sources */,
 				692052B528E7870500BD24FA /* Coordinator.swift in Sources */,
-				6920528628E77E6200BD24FA /* ViewController.swift in Sources */,
-				6920529A28E7812300BD24FA /* DealTabBarViewController.swift in Sources */,
 				692052BF28E7B00C00BD24FA /* NearbyCitiesView.swift in Sources */,
 				692052BA28E787F900BD24FA /* HomeViewController.swift in Sources */,
 				692052B228E7870500BD24FA /* BaseCoordinator.swift in Sources */,
@@ -253,8 +275,10 @@
 				692052B128E7870500BD24FA /* ViewController+Coordinator.swift in Sources */,
 				692052B428E7870500BD24FA /* Presentable.swift in Sources */,
 				692052B328E7870500BD24FA /* CoordinatorFinishOutput.swift in Sources */,
+				692052C328EB68D700BD24FA /* HomeViewPresenter.swift in Sources */,
 				692052A128E7869A00BD24FA /* CoordinatorFactoryProtocol.swift in Sources */,
 				692052B028E7870500BD24FA /* LaunchInstructor.swift in Sources */,
+				692052C128EB689800BD24FA /* HomeViewInteractor.swift in Sources */,
 				692052AF28E7870500BD24FA /* DeepLinkOption.swift in Sources */,
 				692052A028E7869A00BD24FA /* ApplicationCoordinator.swift in Sources */,
 			);
