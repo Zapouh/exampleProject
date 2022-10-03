@@ -10,6 +10,9 @@ import Foundation
 class NetworkingWorker {
 
     enum NetworkError: Error {
+        case unknown
+        case unauthorized
+        case noResponse
         case invalidResponse
         case invalidStatusCode(Int)
     }
@@ -19,36 +22,35 @@ class NetworkingWorker {
         case post = "POST"
     }
     
-    func request<T: Decodable>(fromURL url: URL, httpMethod: HttpMethod = .get, completion: @escaping (Result<T, Error>) -> Void) {
-         let completionOnMain: (Result<T, Error>) -> Void = { result in
-             DispatchQueue.main.async {
-                 completion(result)
-             }
-         }
-
-         var request = URLRequest(url: url)
+    func request<T: Decodable>(fromURL url: URL, httpMethod: HttpMethod = .get) async -> Result<T, Error> {
+        
+        var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
-
-         let urlSession = URLSession.shared.dataTask(with: request) { data, response, error in
-             
-             if let error = error {
-                 completionOnMain(.failure(error))
-                 return
-             }
-
-             guard let urlResponse = response as? HTTPURLResponse else { return completionOnMain(.failure(NetworkError.invalidResponse)) }
-             if !(200..<300).contains(urlResponse.statusCode) {
-                 return completionOnMain(.failure(NetworkError.invalidStatusCode(urlResponse.statusCode)))
-             }
-
-             guard let data = data else { return }
-             do {
-                 let users = try JSONDecoder().decode(T.self, from: data)
-                 completionOnMain(.success(users))
-             } catch {
-                 completionOnMain(.failure(error))
-             }
-         }
-         urlSession.resume()
-     }
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let response = response as? HTTPURLResponse else {
+                return .failure(NetworkError.noResponse)
+            }
+            switch response.statusCode {
+            case 200...299:
+                guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
+                    return .failure(NetworkError.invalidResponse)
+                }
+                return .success(decodedResponse)
+            case 401:
+                return .failure(NetworkError.unauthorized)
+            default:
+                return .failure(NetworkError.invalidStatusCode(response.statusCode))
+            }
+        } catch {
+            return .failure(NetworkError.unknown)
+        }
+    }
+    
+    func fetchCities() async throws -> [Cities] {
+      
+        return []
+    }
 }

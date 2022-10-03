@@ -18,21 +18,22 @@ class NetworkingWorkerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        let expectation = XCTestExpectation(description: "Test settings endpoint")
+    func testEndpointSettingsSuccess() async throws {
         let networkWorker = NetworkingWorker()
         let url = URL(string: "http://testfoodios.herokuapp.com/settings")
         XCTAssertNotNil(url)
-        networkWorker.request(fromURL: url!) { (result: Result<Cities, Error>) in
+        
+        let result: Result<Cities, Error> = await networkWorker.request(fromURL: url!)
+        do {
             switch result {
             case .success(let result):
                 XCTAssertTrue(result.cities.count > 0)
             case .failure(let error):
-                XCTFail(String(describing: error))
+                throw error
             }
-            expectation.fulfill()
+        } catch {
+            XCTFail(String(describing: error))
         }
-        wait(for: [expectation], timeout: 10.0)
     }
 
     func testPerformanceExample() throws {

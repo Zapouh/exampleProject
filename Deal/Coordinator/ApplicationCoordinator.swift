@@ -35,15 +35,23 @@ public class ApplicationCoordinator: BaseCoordinator {
     // MARK: - Private methods
     
     private func runOnboardingUserNameScreen() {
-        
-        
         let tabBar = UITabBarController()
-        let homeView = HomeViewController()
-        homeView.tabBarItem = UITabBarItem(title: "Hello", image: UIImage(systemName: "circle"), selectedImage: UIImage(systemName: "circle"))
-        
+        let homeView = self.getHomeViewController()
         tabBar.viewControllers = [homeView, UIViewController(), UIViewController()]
         
         self.router.push(tabBar)
+    }
+    
+    private func getHomeViewController() -> HomeViewController {
+        let interactor = HomeViewInteractor(networkingWorker: NetworkingWorker())
+        let presenter = HomeViewPresenter()
+        let controller = HomeViewController()
+        
+        presenter.output = controller
+        interactor.output = presenter
+        controller.output = interactor
+        controller.tabBarItem = UITabBarItem(title: "Hello", image: UIImage(systemName: "circle"), selectedImage: UIImage(systemName: "circle"))
+        return controller
     }
     
     

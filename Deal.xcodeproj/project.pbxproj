@@ -32,6 +32,8 @@
 		692052D128EB71A100BD24FA /* DealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052D028EB71A100BD24FA /* DealTests.swift */; };
 		692052D828EB71BA00BD24FA /* NetworkingWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052D728EB71B900BD24FA /* NetworkingWorkerTests.swift */; };
 		692052DB28EB731A00BD24FA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052DA28EB731A00BD24FA /* City.swift */; };
+		692052DD28EB7D7800BD24FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052DC28EB7D7700BD24FA /* HomeViewModel.swift */; };
+		692052DF28EB7DDE00BD24FA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052DE28EB7DDE00BD24FA /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		692052D028EB71A100BD24FA /* DealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealTests.swift; sourceTree = "<group>"; };
 		692052D728EB71B900BD24FA /* NetworkingWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingWorkerTests.swift; sourceTree = "<group>"; };
 		692052DA28EB731A00BD24FA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		692052DC28EB7D7700BD24FA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		692052DE28EB7DDE00BD24FA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,8 @@
 		692052C428EB699700BD24FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				692052DC28EB7D7700BD24FA /* HomeViewModel.swift */,
+				692052DE28EB7DDE00BD24FA /* HomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			files = (
 				692052BD28E78A4000BD24FA /* SelectAddressView.swift in Sources */,
 				692052B528E7870500BD24FA /* Coordinator.swift in Sources */,
+				692052DF28EB7DDE00BD24FA /* HomeModel.swift in Sources */,
 				692052BF28E7B00C00BD24FA /* NearbyCitiesView.swift in Sources */,
 				692052BA28E787F900BD24FA /* HomeViewController.swift in Sources */,
 				692052B228E7870500BD24FA /* BaseCoordinator.swift in Sources */,
@@ -364,6 +371,7 @@
 				692052B328E7870500BD24FA /* CoordinatorFinishOutput.swift in Sources */,
 				692052C328EB68D700BD24FA /* HomeViewPresenter.swift in Sources */,
 				692052A128E7869A00BD24FA /* CoordinatorFactoryProtocol.swift in Sources */,
+				692052DD28EB7D7800BD24FA /* HomeViewModel.swift in Sources */,
 				692052B028E7870500BD24FA /* LaunchInstructor.swift in Sources */,
 				692052C128EB689800BD24FA /* HomeViewInteractor.swift in Sources */,
 				692052AF28E7870500BD24FA /* DeepLinkOption.swift in Sources */,
