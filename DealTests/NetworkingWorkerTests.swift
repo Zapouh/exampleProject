@@ -23,13 +23,14 @@ class NetworkingWorkerTests: XCTestCase {
         let networkWorker = NetworkingWorker()
         let url = URL(string: "http://testfoodios.herokuapp.com/settings")
         XCTAssertNotNil(url)
-        networkWorker.request(fromURL: url!) { (result: Result<[Cities], Error>) in
+        networkWorker.request(fromURL: url!) { (result: Result<Cities, Error>) in
             switch result {
-            case .success(let cities):
-                XCTAssertTrue(cities.count > 0)
+            case .success(let result):
+                XCTAssertTrue(result.cities.count > 0)
             case .failure(let error):
                 XCTFail(String(describing: error))
             }
+            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10.0)
     }
