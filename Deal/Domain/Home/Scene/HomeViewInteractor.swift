@@ -14,5 +14,11 @@ protocol HomeViewInteractorOutput: AnyObject {
 
 final class HomeViewInteractor {
     var output: HomeViewInteractorOutput?
-    init() {}
+    private var networkingWorker: NetworkingWorker?
+    init(networkingWorker: NetworkingWorker) {
+        self.networkingWorker = networkingWorker
+    }
+    
+    public func getCities() {
+    }
 }

@@ -28,7 +28,21 @@
 		692052BF28E7B00C00BD24FA /* NearbyCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */; };
 		692052C128EB689800BD24FA /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052C028EB689800BD24FA /* HomeViewInteractor.swift */; };
 		692052C328EB68D700BD24FA /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052C228EB68D700BD24FA /* HomeViewPresenter.swift */; };
+		692052C928EB6D7E00BD24FA /* NetworkingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052C828EB6D7E00BD24FA /* NetworkingWorker.swift */; };
+		692052D128EB71A100BD24FA /* DealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052D028EB71A100BD24FA /* DealTests.swift */; };
+		692052D828EB71BA00BD24FA /* NetworkingWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052D728EB71B900BD24FA /* NetworkingWorkerTests.swift */; };
+		692052DB28EB731A00BD24FA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692052DA28EB731A00BD24FA /* City.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		692052D228EB71A100BD24FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6920527628E77E6200BD24FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6920527D28E77E6200BD24FA;
+			remoteInfo = Deal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6920527E28E77E6200BD24FA /* Deal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,10 +68,22 @@
 		692052BE28E7B00C00BD24FA /* NearbyCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCitiesView.swift; sourceTree = "<group>"; };
 		692052C028EB689800BD24FA /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInteractor.swift; sourceTree = "<group>"; };
 		692052C228EB68D700BD24FA /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		692052C828EB6D7E00BD24FA /* NetworkingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingWorker.swift; sourceTree = "<group>"; };
+		692052CE28EB71A100BD24FA /* DealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		692052D028EB71A100BD24FA /* DealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealTests.swift; sourceTree = "<group>"; };
+		692052D728EB71B900BD24FA /* NetworkingWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingWorkerTests.swift; sourceTree = "<group>"; };
+		692052DA28EB731A00BD24FA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6920527B28E77E6200BD24FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		692052CB28EB71A100BD24FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				6920528028E77E6200BD24FA /* Deal */,
+				692052CF28EB71A100BD24FA /* DealTests */,
 				6920527F28E77E6200BD24FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				6920527E28E77E6200BD24FA /* Deal.app */,
+				692052CE28EB71A100BD24FA /* DealTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +114,8 @@
 		6920528028E77E6200BD24FA /* Deal */ = {
 			isa = PBXGroup;
 			children = (
-				692052B628E7876A00BD24FA /* Scene */,
+				692052C728EB6D1F00BD24FA /* Worker */,
+				692052B628E7876A00BD24FA /* Domain */,
 				6920529B28E7868300BD24FA /* Coordinator */,
 				6920528128E77E6200BD24FA /* AppDelegate.swift */,
 				6920528328E77E6200BD24FA /* SceneDelegate.swift */,
@@ -147,12 +176,12 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		692052B628E7876A00BD24FA /* Scene */ = {
+		692052B628E7876A00BD24FA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				692052B728E7879A00BD24FA /* Home */,
 			);
-			path = Scene;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		692052B728E7879A00BD24FA /* Home */ = {
@@ -192,6 +221,32 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		692052C728EB6D1F00BD24FA /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				692052D928EB730400BD24FA /* Models */,
+				692052C828EB6D7E00BD24FA /* NetworkingWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		692052CF28EB71A100BD24FA /* DealTests */ = {
+			isa = PBXGroup;
+			children = (
+				692052D028EB71A100BD24FA /* DealTests.swift */,
+				692052D728EB71B900BD24FA /* NetworkingWorkerTests.swift */,
+			);
+			path = DealTests;
+			sourceTree = "<group>";
+		};
+		692052D928EB730400BD24FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				692052DA28EB731A00BD24FA /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,6 +267,24 @@
 			productReference = 6920527E28E77E6200BD24FA /* Deal.app */;
 			productType = "com.apple.product-type.application";
 		};
+		692052CD28EB71A100BD24FA /* DealTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 692052D428EB71A200BD24FA /* Build configuration list for PBXNativeTarget "DealTests" */;
+			buildPhases = (
+				692052CA28EB71A100BD24FA /* Sources */,
+				692052CB28EB71A100BD24FA /* Frameworks */,
+				692052CC28EB71A100BD24FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				692052D328EB71A100BD24FA /* PBXTargetDependency */,
+			);
+			name = DealTests;
+			productName = DealTests;
+			productReference = 692052CE28EB71A100BD24FA /* DealTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +297,10 @@
 				TargetAttributes = {
 					6920527D28E77E6200BD24FA = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					692052CD28EB71A100BD24FA = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 6920527D28E77E6200BD24FA;
 					};
 				};
 			};
@@ -241,6 +318,7 @@
 			projectRoot = "";
 			targets = (
 				6920527D28E77E6200BD24FA /* Deal */,
+				692052CD28EB71A100BD24FA /* DealTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +334,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		692052CC28EB71A100BD24FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,6 +353,8 @@
 				692052BF28E7B00C00BD24FA /* NearbyCitiesView.swift in Sources */,
 				692052BA28E787F900BD24FA /* HomeViewController.swift in Sources */,
 				692052B228E7870500BD24FA /* BaseCoordinator.swift in Sources */,
+				692052C928EB6D7E00BD24FA /* NetworkingWorker.swift in Sources */,
+				692052DB28EB731A00BD24FA /* City.swift in Sources */,
 				6920528228E77E6200BD24FA /* AppDelegate.swift in Sources */,
 				692052A328E7869A00BD24FA /* ViewControllerFactory.swift in Sources */,
 				6920528428E77E6200BD24FA /* SceneDelegate.swift in Sources */,
@@ -284,7 +371,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		692052CA28EB71A100BD24FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				692052D128EB71A100BD24FA /* DealTests.swift in Sources */,
+				692052D828EB71BA00BD24FA /* NetworkingWorkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		692052D328EB71A100BD24FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6920527D28E77E6200BD24FA /* Deal */;
+			targetProxy = 692052D228EB71A100BD24FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6920528C28E77E6600BD24FA /* LaunchScreen.storyboard */ = {
@@ -464,6 +568,40 @@
 			};
 			name = Release;
 		};
+		692052D528EB71A200BD24FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hsk.zapouh.DealTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deal.app/Deal";
+			};
+			name = Debug;
+		};
+		692052D628EB71A200BD24FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hsk.zapouh.DealTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deal.app/Deal";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +619,15 @@
 			buildConfigurations = (
 				6920529328E77E6600BD24FA /* Debug */,
 				6920529428E77E6600BD24FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		692052D428EB71A200BD24FA /* Build configuration list for PBXNativeTarget "DealTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				692052D528EB71A200BD24FA /* Debug */,
+				692052D628EB71A200BD24FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
